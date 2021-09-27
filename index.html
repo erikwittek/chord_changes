@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chord Changes Generator</title>
+  </head>
+  <body>
+    <header>
+      <h1>Chord Changes Generator</h1>
+    </header>
+
+    <main x-data="data" x-init="randomize()">
+      <form @submit.prevent="submit">
+        <button type="button" @click.prevent="randomize">Randomize</button>
+        <br>
+
+        <label for="key_select">Select Key:</label>
+        <select name="key_select" id="key_select" x-model="selected_key">
+          <template x-for="key in available_keys">
+            <option  x-value="key" x-text="key" x-bind:selected="key === selected_key"></option>
+          </template>
+        </select>
+        <br>
+
+        <label for="num_of_chords_select">Select Number of Chords:</label>
+        <select name="num_of_chords_select" id="num_of_chords_select" x-model="number_of_chords">
+          <template x-for="number in [1, 2, 3, 4, 5, 6]">
+            <option  x-value="number" x-text="number" x-bind:selected="number === number_of_chords"></option>
+          </template>
+        </select>
+        <br>
+
+        <input type="submit" value="Generate Chord Changes">
+      </form>
+
+      <a x-bind:href="songUrl">Import into iReal Pro</a>
+      <pre x-text="song"></pre>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

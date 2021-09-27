@@ -1,0 +1,15 @@
+{
+  "name": "chord_changes",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.5.4"
+  },
+  "dependencies": {
+    "alpinejs": "^3.4.1"
+  }
+}
