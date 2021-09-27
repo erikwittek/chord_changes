@@ -1,3 +1,3 @@
 export default {
-    base: 'https://erikwittek.github.com/chord_changes',
+    base: 'https://erikwittek.github.io/chord_changes/',
 };
