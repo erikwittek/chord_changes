@@ -1,0 +1,26 @@
+name: Deploy to GH-Pages
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 'lets/*'
+
+      - name: Install deps, build site
+        run: |
+          npm install
+          npm run build
+        
+      - name: Deploy site
+        run: |
+          cd dist/
+          git commit -am "Deploy site"
+          git push
