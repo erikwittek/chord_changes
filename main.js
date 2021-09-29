@@ -37,7 +37,7 @@ Alpine.data('data', () => ({
       this.song += `[${chord}   | x  | x  | x  ]\n`;
     });
 
-    this.song += "            \n";
+    this.song += "YYY";
 
     let pattern = getRandomElement(patterns[this.number_of_chords]);
     chords.forEach(chord => {

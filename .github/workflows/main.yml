@@ -18,8 +18,9 @@ jobs:
         run: |
           npm install
           npm run build
-        
+
       - name: Deploy site
+        uses: fregante/setup-git-user@v1
         run: |
           cd dist/
           git commit -am "Deploy site"
