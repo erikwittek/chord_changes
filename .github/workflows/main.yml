@@ -23,4 +23,4 @@ jobs:
       - run: |
           cd dist/
           ls -la
-          git st
+          git status
