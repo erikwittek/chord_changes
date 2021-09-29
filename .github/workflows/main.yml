@@ -22,5 +22,6 @@ jobs:
         uses: fregante/setup-git-user@v1
       - run: |
           cd dist/
-          ls -la
-          git status
+          git checkout gh-pages
+          git commit -m "Deploy Site"
+          git push
