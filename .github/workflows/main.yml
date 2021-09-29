@@ -22,5 +22,5 @@ jobs:
         uses: fregante/setup-git-user@v1
       - run: |
           cd dist/
-          git commit -am "Deploy site"
-          git push
+          ls -la
+          git st
